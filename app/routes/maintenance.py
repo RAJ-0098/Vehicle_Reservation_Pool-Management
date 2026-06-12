@@ -39,7 +39,8 @@ def complete_maintenance(MID:int,db:Session=Depends(get_db)):
 
     vehicle.status = Vehicle_status.AVAILABLE
     
-    vehicle.maintenance_kms  +=vehicle.maintenance_interval
+    vehicle.maintenance_kms  += vehicle.maintenance_interval
+
 
     vehicle_log = Vehicle_log(
                 vehicle_id=vehicle.id,
